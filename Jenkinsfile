@@ -48,6 +48,9 @@ pipeline {
     }
 
     stage('UAT Deploy') {
+      when {
+        branch 'master'
+      }
       steps {
         echo 'Build Deployed to UAT Region'
         echo 'Notify the UAT user with email'
@@ -62,6 +65,9 @@ pipeline {
     }
 
     stage('Prod Deploy') {
+      when {
+        branch 'master'
+      }
       steps {
         echo 'Build Successfully Deployed to PROD region - Hurray!!'
       }
