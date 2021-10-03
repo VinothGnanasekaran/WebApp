@@ -58,6 +58,9 @@ pipeline {
     }
 
     stage('UAT Certify') {
+      when {
+        branch 'master'
+      }
       steps {
         input 'Is UAT Done and Ready to Go for Prod?'
         echo 'UAT Certified - Manually Successful'
